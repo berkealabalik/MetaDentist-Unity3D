@@ -9,7 +9,7 @@ public class Design : MonoBehaviour
     {
         
     }
-
+    //Onurhan Simsek
     // Update is called once per frame
     void Update()
     {
