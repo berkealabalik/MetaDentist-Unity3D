@@ -30,11 +30,10 @@ public class GyroCamera : MonoBehaviour
     }
 
     private void Update()
-    {
-        ApplyGyroRotation();
-        ApplyCalibration();
-
-        transform.rotation = Quaternion.Slerp(transform.rotation, _rawGyroRotation.rotation, _smoothing);
+    {//elle bir ayar yapcaðýmýz zaman bunlarý yorum satýrýna alalým arkadaþlar!!!
+        //ApplyGyroRotation();
+        //ApplyCalibration();
+        //transform.rotation = Quaternion.Slerp(transform.rotation, _rawGyroRotation.rotation, _smoothing);
     }
 
     private IEnumerator CalibrateYAngle()
@@ -49,8 +48,8 @@ public class GyroCamera : MonoBehaviour
     private void ApplyGyroRotation()
     {
         _rawGyroRotation.rotation = Input.gyro.attitude;
-        _rawGyroRotation.Rotate(0f, 0f, 180f, Space.Self); // Swap "handedness" of quaternion from gyro.
-        _rawGyroRotation.Rotate(90f, 180f, 0f, Space.World); // Rotate to make sense as a camera pointing out the back of your device.
+       // _rawGyroRotation.Rotate(0f, 0f, 0f, Space.Self); // Swap "handedness" of quaternion from gyro.
+        //_rawGyroRotation.Rotate(90f, 180f, 0f, Space.World); // Rotate to make sense as a camera pointing out the back of your device.
         _appliedGyroYAngle = _rawGyroRotation.eulerAngles.y; // Save the angle around y axis for use in calibration.
     }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class Etkilesim : MonoBehaviour
     public float mesafe;
     public float kirmiziFloat;
     public Outline outline;
+    private RaycastHit sonHit;
     
     // Start is called before the first frame update
     void Start()
@@ -24,24 +26,53 @@ public class Etkilesim : MonoBehaviour
         Vector3 ileri = transform.TransformDirection(Vector3.forward);
 
         nokta.color = Color.white;
+        
         if (Physics.Raycast(transform.position,ileri,out hit))
         {
             Debug.DrawLine(transform.position, hit.point, Color.blue);
             Debug.Log(hit.collider.gameObject.name);
+
             if ( hit.collider.gameObject.tag == "HighlightedObject")
             {
-                Debug.Log("hit");
+                Debug.Log("hit: " +hit.collider.gameObject.name);
+                try
+                {
+                    if (sonHit.collider.gameObject.name != hit.collider.gameObject.name)
+                    {
+                        
+                        sonHit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 0f;
+                        sonHit = hit;
+
+                    }
+                   
+                }
+                catch (NullReferenceException e)
+                {
+                    sonHit = hit;
+                }
+                
                 nokta.color = Color.red;
-                //outline.enabled = true;
-                //hit.collider.gameObject.GetComponent<Outline>().enabled = true;
-                //if (Input.GetMouseButtonDown(0))
-                //{
-                //   // Debug.Log("burada");
-                //}
+                
+                hit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 10.0f;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Debug.Log("seçildi: " + hit.collider.gameObject.name);
+                }
 
 
             }
             //Debug.Log("burada");
+        }
+        else
+        {
+            try
+            {
+                sonHit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 0f;
+            }
+            catch(NullReferenceException e)
+            {
+                //Bir þey yapma
+            }  
         }
     }
 }
