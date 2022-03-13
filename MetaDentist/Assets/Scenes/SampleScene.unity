@@ -933,8 +933,8 @@ GameObject:
   - component: {fileID: 1729100970}
   - component: {fileID: 1729100969}
   - component: {fileID: 1729100968}
-  - component: {fileID: 1729100967}
   - component: {fileID: 1729100971}
+  - component: {fileID: 1729100967}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -1029,9 +1029,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1729100966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 095c2c4f39af7164984be36523ea1a34, type: 3}
+  m_Script: {fileID: 11500000, guid: dd225667e1ec58544a950350ab201eb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _smoothing: 0.1
 --- !u!1 &1770751651 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6885623141644904832, guid: a8926111ca09d7949bbac69b9eba0de4,
