@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - HighlightedObject
+  - Button
+  - Curuk
+  - Button1
+  - Button2
   layers:
   - Default
   - TransparentFX

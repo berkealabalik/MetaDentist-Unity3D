@@ -11,68 +11,92 @@ public class Etkilesim : MonoBehaviour
     public float kirmiziFloat;
     public Outline outline;
     private RaycastHit sonHit;
-    
+
     // Start is called before the first frame update
     void Start()
     {
-       
+
 
     }
 
 
     // Update is called once per frame
-    void Update() 
+    void Update()
     {
         RaycastHit hit;
         Vector3 ileri = transform.TransformDirection(Vector3.forward);
 
         nokta.color = Color.white;
-        
-        if (Physics.Raycast(transform.position,ileri,out hit))
+
+        if (Physics.Raycast(transform.position, ileri, out hit))
         {
             Debug.DrawLine(transform.position, hit.point, Color.blue);
-            Debug.Log(hit.collider.gameObject.name);
-
-            if ( hit.collider.gameObject.CompareTag("HighlightedObject"))
+         
+            if (hit.collider.gameObject.CompareTag("HighlightedObject"))
             {
-                Debug.Log("hit: " +hit.collider.gameObject.name);
-                try
-                {
-                    if (sonHit.collider.gameObject.name != hit.collider.gameObject.name)
-                    {
-                        
-                        sonHit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 0f;
-                        sonHit = hit;
-
-                    }
-                   
-                }
-                catch (NullReferenceException e)
-                {
-                    sonHit = hit;
-                }
-                
                 nokta.color = Color.red;
-                
                 hit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 10.0f;
                 if (Input.GetMouseButtonDown(0))
                 {
-                    Debug.Log("seçildi: " + hit.collider.gameObject.name);
+                    Debug.Log("seÃ§ildi: " + hit.collider.gameObject.name);
                 }
 
-
+                sonHit = hit;
             }
-            else if(hit.collider.gameObject.CompareTag("Button"))
-            {
+            else if (hit.collider.gameObject.CompareTag("Button"))
+            {   nokta.color = Color.red;
+                //hit.collider.gameObject.GetComponent<Button>().colors.highlightedColor= Color.yellow;
+
+                var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
+                colors.normalColor = Color.red;
+                hit.collider.gameObject.GetComponent<Button> ().colors = colors;
                 if (Input.GetMouseButtonDown(0))
                 {
+                    int scenenum = 1;
                     // SceneManager.LoadScene("Gokberk");
-                    LoadScene();
-                    Debug.Log("Button Týklandý");
-                   
+                    LoadScene(scenenum);
+                    Debug.Log("Button T?kland?");
+
                 }
             }
-            //Debug.Log("burada");
+            else if (hit.collider.gameObject.CompareTag("Button1"))
+            {nokta.color = Color.red;
+            var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
+                colors.normalColor = Color.red;
+                hit.collider.gameObject.GetComponent<Button> ().colors = colors;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    int scenenum = 2;
+                    // SceneManager.LoadScene("Gokberk");
+                    LoadScene(scenenum);
+                    Debug.Log("Button T?kland?");
+
+                }
+            }
+            else if (hit.collider.gameObject.CompareTag("Button2"))
+            {nokta.color = Color.red;
+            var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
+                colors.normalColor = Color.red;
+                hit.collider.gameObject.GetComponent<Button> ().colors = colors;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    int scenenum = 3;
+                    // SceneManager.LoadScene("Gokberk");
+                    LoadScene(scenenum);
+                    Debug.Log("Button T?kland?");
+
+                }
+            }
+            try { 
+            if (sonHit.collider.gameObject != hit.collider.gameObject)
+            {
+                sonHit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 0f;
+            }
+                
+            } catch
+            {
+                Debug.Log("nil");
+            }
         }
         else
         {
@@ -80,15 +104,15 @@ public class Etkilesim : MonoBehaviour
             {
                 sonHit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 0f;
             }
-            catch(NullReferenceException e)
+            catch (NullReferenceException e)
             {
-                //Bir þey yapma
-            }  
+                //Bir ?ey yapma
+            }
         }
     }
-    public void LoadScene()
+    public void LoadScene(int n)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + n);
     }
 }
-//hit.distance <= mesafe &&
+//hit.distance <= mesafe &&t.distance <= mesafe &&
