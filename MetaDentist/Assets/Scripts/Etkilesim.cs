@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class Etkilesim : MonoBehaviour
 {
     public Image nokta;
@@ -19,6 +19,7 @@ public class Etkilesim : MonoBehaviour
 
     }
 
+
     // Update is called once per frame
     void Update() 
     {
@@ -32,7 +33,7 @@ public class Etkilesim : MonoBehaviour
             Debug.DrawLine(transform.position, hit.point, Color.blue);
             Debug.Log(hit.collider.gameObject.name);
 
-            if ( hit.collider.gameObject.tag == "HighlightedObject")
+            if ( hit.collider.gameObject.CompareTag("HighlightedObject"))
             {
                 Debug.Log("hit: " +hit.collider.gameObject.name);
                 try
@@ -61,6 +62,16 @@ public class Etkilesim : MonoBehaviour
 
 
             }
+            else if(hit.collider.gameObject.CompareTag("Button"))
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    // SceneManager.LoadScene("Gokberk");
+                    LoadScene();
+                    Debug.Log("Button Týklandý");
+                   
+                }
+            }
             //Debug.Log("burada");
         }
         else
@@ -74,6 +85,10 @@ public class Etkilesim : MonoBehaviour
                 //Bir þey yapma
             }  
         }
+    }
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
 //hit.distance <= mesafe &&
