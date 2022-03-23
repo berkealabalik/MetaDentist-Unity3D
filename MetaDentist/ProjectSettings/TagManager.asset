@@ -9,6 +9,7 @@ TagManager:
   - Curuk
   - Button1
   - Button2
+  - DentistTool
   layers:
   - Default
   - TransparentFX

@@ -11,12 +11,17 @@ public class Etkilesim : MonoBehaviour
     public float kirmiziFloat;
     public Outline outline;
     private RaycastHit sonHit;
+    public GameObject cube;
+    public GameObject tool04;
+    private Vector3 cubeFirstPosition;
+    private Vector3 toolFirstPosition;
+    private Vector3 hitFirstPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-
-
+        this.cubeFirstPosition = cube.transform.position;
+        this.toolFirstPosition = tool04.transform.position;
     }
 
 
@@ -31,7 +36,8 @@ public class Etkilesim : MonoBehaviour
         if (Physics.Raycast(transform.position, ileri, out hit))
         {
             Debug.DrawLine(transform.position, hit.point, Color.blue);
-         
+            hitFirstPosition = hit.collider.gameObject.transform.position;
+
             if (hit.collider.gameObject.CompareTag("HighlightedObject"))
             {
                 nokta.color = Color.red;
@@ -44,7 +50,8 @@ public class Etkilesim : MonoBehaviour
                 sonHit = hit;
             }
             else if (hit.collider.gameObject.CompareTag("Button"))
-            {   nokta.color = Color.red;
+            {   
+                nokta.color = Color.red;
                 //hit.collider.gameObject.GetComponent<Button>().colors.highlightedColor= Color.yellow;
 
                 var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
@@ -60,8 +67,9 @@ public class Etkilesim : MonoBehaviour
                 }
             }
             else if (hit.collider.gameObject.CompareTag("Button1"))
-            {nokta.color = Color.red;
-            var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
+            {
+                nokta.color = Color.red;
+                var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
                 colors.normalColor = Color.red;
                 hit.collider.gameObject.GetComponent<Button> ().colors = colors;
                 if (Input.GetMouseButtonDown(0))
@@ -74,8 +82,9 @@ public class Etkilesim : MonoBehaviour
                 }
             }
             else if (hit.collider.gameObject.CompareTag("Button2"))
-            {nokta.color = Color.red;
-            var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
+            {
+                nokta.color = Color.red;
+                var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
                 colors.normalColor = Color.red;
                 hit.collider.gameObject.GetComponent<Button> ().colors = colors;
                 if (Input.GetMouseButtonDown(0))
@@ -83,15 +92,47 @@ public class Etkilesim : MonoBehaviour
                     int scenenum = 3;
                     // SceneManager.LoadScene("Gokberk");
                     LoadScene(scenenum);
-                    Debug.Log("Button T?kland?");
+                    Debug.Log("Button Tiklandi");
 
                 }
             }
-            try { 
-            if (sonHit.collider.gameObject != hit.collider.gameObject)
-            {
-                sonHit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 0f;
+            else if (hit.collider.gameObject.CompareTag("DentistTool") ){
+                nokta.color = Color.red;
+                hit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 10.0f;
+                Debug.Log("hit name" + hit.collider.name);
+                if (Input.GetMouseButtonDown(0))
+                {
+                    if (hit.collider.name == "TOOL04") {
+                        Debug.Log("seçildi: " + hit.collider.gameObject.name);
+                        Debug.Log("Position bilgisi dentist tool" + hit.collider.gameObject.transform.position);
+                        Debug.Log("Position bilgisi cube" + cube.transform.position);
+
+                        cube.transform.position = toolFirstPosition;
+                        hit.collider.transform.position = cubeFirstPosition;
+
+                        // hit.collider.gameObject.transform.position = this.cubeFirstPosition;
+                        hit.collider.gameObject.transform.rotation = Quaternion.Euler(-90,0,0);
+                        // cube.transform.position = this.hitFirstPosition;
+                        cube.transform.rotation =  Quaternion.Euler(0,90,0);
+                    }
+                    else if (hit.collider.name == "Cube 1") {
+                        Debug.Log("cube 1 carpti");
+                       
+                        hit.collider.transform.position = cubeFirstPosition;
+                        tool04.transform.position = toolFirstPosition;
+                    }
+                   
+                    // cube.SetActive(false);
+                }
+
+                sonHit = hit;
             }
+
+            try { 
+                if (sonHit.collider.gameObject != hit.collider.gameObject)
+                {
+                    sonHit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 0f;
+                }
                 
             } catch
             {
@@ -106,7 +147,7 @@ public class Etkilesim : MonoBehaviour
             }
             catch (NullReferenceException e)
             {
-                //Bir ?ey yapma
+                //Bir sey yapma
             }
         }
     }
