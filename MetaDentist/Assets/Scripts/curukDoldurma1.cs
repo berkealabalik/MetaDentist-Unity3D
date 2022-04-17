@@ -7,11 +7,11 @@ public class curukDoldurma1 : MonoBehaviour
 
 
     public GameObject doldurulcakYer;
-    public GameObject curuk;
-    public GameObject curuks;
+    public GameObject curuk; // Ýçine tekrar edecek obje .
+    public GameObject Parentcuruks; // Çürük objelerinin içine gireceði parent . Önceden emtpy object oluþturup baðlanmalý
     public float minearalik;
     public float frequency;
-    public int CubeCount;
+    public static int CubeCount;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +46,7 @@ public class curukDoldurma1 : MonoBehaviour
                     for (float zR = rendercuruk.transform.localScale.z; zR <= (zbound + minearalik); zR += rendercuruk.transform.localScale.z)
                     {
                         CubeCount += 1;
-                        Instantiate(curuk, new Vector3(xR, yR, zR), Quaternion.identity , curuks.transform);
+                        Instantiate(curuk, new Vector3(xR, yR, zR), Quaternion.identity , Parentcuruks.transform);
                         
                     }
                 }
@@ -59,9 +59,10 @@ public class curukDoldurma1 : MonoBehaviour
 
 
         //curuks.transform.position = new Vector3(0, 0, 0);
-        curuks.transform.SetParent(doldurulcakYer.transform , true);
+        Parentcuruks.transform.SetParent(doldurulcakYer.transform , true);
         //curuks.transform.localPosition = doldurulcakYer.transform.localPosition;
-        curuks.transform.localPosition = new Vector3(0, 0, 0);
+
+        Parentcuruks.transform.position = doldurulcakYer.transform.position;
     }
 
 }

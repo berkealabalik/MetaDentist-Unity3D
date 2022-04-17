@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 public class Etkilesim : MonoBehaviour
 {
     public Image nokta;
@@ -16,6 +17,7 @@ public class Etkilesim : MonoBehaviour
     private Vector3 cubeFirstPosition;
     private Vector3 toolFirstPosition;
     private Vector3 hitFirstPosition;
+ 
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,9 @@ public class Etkilesim : MonoBehaviour
         Vector3 ileri = transform.TransformDirection(Vector3.forward);
 
         nokta.color = Color.white;
+
+
+
 
         if (Physics.Raycast(transform.position, ileri, out hit))
         {
@@ -52,12 +57,10 @@ public class Etkilesim : MonoBehaviour
             else if (hit.collider.gameObject.CompareTag("Button"))
             {   
                 nokta.color = Color.red;
-                //hit.collider.gameObject.GetComponent<Button>().colors.highlightedColor= Color.yellow;
-
                 var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
                 colors.normalColor = Color.red;
                 hit.collider.gameObject.GetComponent<Button> ().colors = colors;
-                if (Input.GetMouseButtonDown(0))
+                if (Gamepad.all[0].buttonSouth.isPressed)
                 {
                     int scenenum = 1;
                     // SceneManager.LoadScene("Gokberk");
@@ -65,14 +68,16 @@ public class Etkilesim : MonoBehaviour
                     Debug.Log("Button T?kland?");
 
                 }
+             
             }
+            
             else if (hit.collider.gameObject.CompareTag("Button1"))
             {
                 nokta.color = Color.red;
                 var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
                 colors.normalColor = Color.red;
                 hit.collider.gameObject.GetComponent<Button> ().colors = colors;
-                if (Input.GetMouseButtonDown(0))
+                if (Gamepad.all[0].buttonSouth.isPressed)
                 {
                     int scenenum = 2;
                     // SceneManager.LoadScene("Gokberk");
@@ -80,14 +85,16 @@ public class Etkilesim : MonoBehaviour
                     Debug.Log("Button T?kland?");
 
                 }
+                
             }
             else if (hit.collider.gameObject.CompareTag("Button2"))
             {
+
                 nokta.color = Color.red;
                 var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
                 colors.normalColor = Color.red;
                 hit.collider.gameObject.GetComponent<Button> ().colors = colors;
-                if (Input.GetMouseButtonDown(0))
+                if (Gamepad.all[0].buttonSouth.isPressed)
                 {
                     int scenenum = 3;
                     // SceneManager.LoadScene("Gokberk");
@@ -95,12 +102,13 @@ public class Etkilesim : MonoBehaviour
                     Debug.Log("Button Tiklandi");
 
                 }
+        
             }
             else if (hit.collider.gameObject.CompareTag("DentistTool") ){
                 nokta.color = Color.red;
                 hit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 10.0f;
                 Debug.Log("hit name" + hit.collider.name);
-                if (Input.GetMouseButtonDown(0))
+                if (Gamepad.all[0].buttonSouth.isPressed)
                 {
                     if (hit.collider.name == "TOOL04") {
                         Debug.Log("seçildi: " + hit.collider.gameObject.name);

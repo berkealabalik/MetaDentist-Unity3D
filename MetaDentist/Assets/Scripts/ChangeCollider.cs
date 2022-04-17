@@ -1,0 +1,84 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+public class ChangeCollider : MonoBehaviour
+{
+  
+    private BoxCollider AeratörCollider;
+    private bool pressed = false;
+
+    public GUIStyle aeiratörStilibüyük;
+    public GUIStyle aeiratörStiliküçük;
+    private float timer = 0;
+    private float duration = 0.15f;
+    // Start is called before the first frame update
+
+    public enum HeadState { Big, small}
+    public delegate void HeadMethod();
+    private HeadState state;
+    private Dictionary<HeadState, HeadMethod> heads;
+
+
+    void Start()
+    {
+        heads = new Dictionary<HeadState, HeadMethod>();
+        heads[HeadState.Big] = Bighead;
+        heads[HeadState.small] = smallHead;
+        state = HeadState.small;
+
+        AeratörCollider = GetComponent<BoxCollider>();
+
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(Gamepad.all[0].triangleButton.isPressed) {
+
+            timer += Time.deltaTime;
+            if (timer >= duration)
+            {
+                timer = 0;
+                if (pressed == false)
+                {
+                    AeratörCollider.size = new Vector3(AeratörCollider.size.x, AeratörCollider.size.y * 2, AeratörCollider.size.z * 2);
+                    pressed = true;
+                    state = HeadState.Big;
+                   
+                }
+                else
+                {
+                    AeratörCollider.size = new Vector3(AeratörCollider.size.x, AeratörCollider.size.y / 2, AeratörCollider.size.z / 2);
+                    pressed = false;
+                    state = HeadState.small;
+                }
+            }
+            
+         
+        }
+    }
+
+
+    void OnGUI()
+    {
+        heads[state]();
+    }
+
+    public void smallHead()
+    {
+             GUI.Label(new Rect(0, 0, Screen.width, 50), "0.5MM", aeiratörStiliküçük);
+        // main menu gui goes here
+    }
+
+    public void Bighead()
+    {
+        GUI.Label(new Rect(0, 0, Screen.width, 50), "0.5MM", aeiratörStilibüyük);
+    }
+
+
+
+}
+
+

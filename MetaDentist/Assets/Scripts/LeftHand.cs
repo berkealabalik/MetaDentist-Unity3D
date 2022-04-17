@@ -20,6 +20,11 @@ public class LeftHand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      
+        
+
+
+
         if (Gamepad.all.Count > 0)
         {
             if (Gamepad.all[0].leftStick.left.isPressed)
@@ -34,10 +39,19 @@ public class LeftHand : MonoBehaviour
 
             if (Gamepad.all[0].leftStick.up.isPressed)
             {
-                cube.transform.position += Vector3.up * Time.deltaTime * 5f;
+                cube.transform.position += Vector3.forward * Time.deltaTime * 5f;
             }
 
             if (Gamepad.all[0].leftStick.down.isPressed)
+            {
+                cube.transform.position += Vector3.back * Time.deltaTime * 5f;
+            }
+
+            if (Gamepad.all[0].leftShoulder.isPressed)
+            {
+                cube.transform.position += Vector3.up * Time.deltaTime * 5f;
+            }
+            if (Gamepad.all[0].leftTrigger.isPressed)
             {
                 cube.transform.position += Vector3.down * Time.deltaTime * 5f;
             }

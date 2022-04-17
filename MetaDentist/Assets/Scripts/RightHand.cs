@@ -34,13 +34,23 @@ public class RightHand : MonoBehaviour
 
             if (Gamepad.all[0].rightStick.up.isPressed)
             {
-                cube.transform.position += Vector3.up * Time.deltaTime * 5f;
+                cube.transform.position += Vector3.forward * Time.deltaTime * 5f;
             }
 
             if (Gamepad.all[0].rightStick.down.isPressed)
             {
+                cube.transform.position += Vector3.back * Time.deltaTime * 5f;
+            }
+            if (Gamepad.all[0].rightTrigger.isPressed)
+            {
                 cube.transform.position += Vector3.down * Time.deltaTime * 5f;
             }
+            if (Gamepad.all[0].rightShoulder.isPressed)
+            {
+                cube.transform.position += Vector3.up * Time.deltaTime * 5f;
+            }
+
+            
 
 
         }
