@@ -5,17 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
-  
     // Start is called before the first frame update
-  public void PlayGame()
+    public Animator animator;
+    public void playGame()
     {
-      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+       
+       
     }
-
-    public void QuitGame()
+  
+   
+    public void ExitGame()
     {
-        Debug.Log("Quit");
         Application.Quit();
+        Debug.Log("Game is exiting");
     }
 }
