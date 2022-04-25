@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,7 @@ public class GamepadHandControl : MonoBehaviour
             Debug.Log(Gamepad.all[i].name);
         }
 
-
+        
     }
 
     // Update is called once per frame
@@ -25,22 +26,22 @@ public class GamepadHandControl : MonoBehaviour
         {
             if (Gamepad.all[0].rightStick.left.isPressed)
             {
-                Charachter.transform.position += Vector3.forward * Time.deltaTime * speed;
+                Charachter.transform.position += Vector3.left * Time.deltaTime * speed;
             }
 
             if (Gamepad.all[0].rightStick.right.isPressed)
             {
-                Charachter.transform.position += Vector3.back * Time.deltaTime * speed;
+                Charachter.transform.position += Vector3.right * Time.deltaTime * speed;
             }
 
             if (Gamepad.all[0].rightStick.up.isPressed)
             {
-                Charachter.transform.position += Vector3.right * Time.deltaTime * speed;
+                Charachter.transform.position += Vector3.forward * Time.deltaTime * speed;
             }
 
             if (Gamepad.all[0].rightStick.down.isPressed)
             {
-                Charachter.transform.position += Vector3.left * Time.deltaTime * speed;
+                Charachter.transform.position += Vector3.back * Time.deltaTime * speed;
             }
             if (Gamepad.all[0].leftStick.down.isPressed)
             {

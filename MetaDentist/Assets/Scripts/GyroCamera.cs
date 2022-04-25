@@ -31,9 +31,9 @@ public class GyroCamera : MonoBehaviour
 
     private void Update()
     {//elle bir ayar yapca��m�z zaman bunlar� yorum sat�r�na alal�m arkada�lar!!!
-        ApplyGyroRotation();
-        ApplyCalibration();
-        transform.rotation = Quaternion.Slerp(transform.rotation, _rawGyroRotation.rotation, _smoothing);
+        //ApplyGyroRotation();
+        //ApplyCalibration();
+        //transform.rotation = Quaternion.Slerp(transform.rotation, _rawGyroRotation.rotation, _smoothing);
     }
 
     private IEnumerator CalibrateYAngle()

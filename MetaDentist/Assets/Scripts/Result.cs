@@ -8,8 +8,8 @@ public class Result : MonoBehaviour
     private int TotalTime;
     private int TotalCubeNum;
     private int leftCubeNum;
-    private int TotalTimesmallaeratörhead;
-    private int TotalTimebiggaeratörhead;
+    //private int TotalTimesmallaeratï¿½rhead;
+    //private int TotalTimebiggaeratï¿½rhead;
 
 
     private TouchDelete touchDelete;
@@ -24,9 +24,9 @@ public class Result : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TotalCubeNum = curukDoldurma1.CubeCount;
-        MineGirme = TouchDelete.MineyeGirmeSayisi;
-        leftCubeNum = curukDoldurma1.CubeCount;
+        //TotalCubeNum = curukDoldurma1.CubeCount;
+        //MineGirme = TouchDelete.MineyeGirmeSayisi;
+        //leftCubeNum = curukDoldurma1.CubeCount;
 
         //Debug.Log("Total cube :" + TotalCubeNum);
         print(TotalCubeNum);
