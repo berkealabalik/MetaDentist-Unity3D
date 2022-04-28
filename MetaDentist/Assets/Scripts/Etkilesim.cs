@@ -43,6 +43,8 @@ public class Etkilesim : MonoBehaviour
 
                 sonHit = hit;
             }
+            
+            
             else if (hit.collider.gameObject.CompareTag("Button"))
             {   nokta.color = Color.red;
                 //hit.collider.gameObject.GetComponent<Button>().colors.highlightedColor= Color.yellow;
@@ -58,10 +60,16 @@ public class Etkilesim : MonoBehaviour
                     Debug.Log("Button T?kland?");
 
                 }
+               var colors1 = hit.collider.gameObject.GetComponent<Button> ().colors;
+               colors1.normalColor = Color.gray;
+               hit.collider.gameObject.GetComponent<Button> ().colors = colors1;
             }
+            
+            
             else if (hit.collider.gameObject.CompareTag("Button1"))
-            {nokta.color = Color.red;
-            var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
+            {   
+                nokta.color = Color.red;
+                var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
                 colors.normalColor = Color.red;
                 hit.collider.gameObject.GetComponent<Button> ().colors = colors;
                 if (Input.GetMouseButtonDown(0))
@@ -72,10 +80,15 @@ public class Etkilesim : MonoBehaviour
                     Debug.Log("Button T?kland?");
 
                 }
+                var colors2 = hit.collider.gameObject.GetComponent<Button> ().colors;
+                colors2.normalColor = Color.gray;
+                hit.collider.gameObject.GetComponent<Button> ().colors = colors2;
             }
+
+
             else if (hit.collider.gameObject.CompareTag("Button2"))
-            {nokta.color = Color.red;
-            var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
+            {   nokta.color = Color.red;
+                var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
                 colors.normalColor = Color.red;
                 hit.collider.gameObject.GetComponent<Button> ().colors = colors;
                 if (Input.GetMouseButtonDown(0))
@@ -86,7 +99,11 @@ public class Etkilesim : MonoBehaviour
                     Debug.Log("Button T?kland?");
 
                 }
+                var colors3 = hit.collider.gameObject.GetComponent<Button> ().colors;
+                colors3.normalColor = Color.gray;
+                hit.collider.gameObject.GetComponent<Button> ().colors = colors3;
             }
+
             try { 
             if (sonHit.collider.gameObject != hit.collider.gameObject)
             {
@@ -104,7 +121,7 @@ public class Etkilesim : MonoBehaviour
             {
                 sonHit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 0f;
             }
-            catch (NullReferenceException e)
+            catch (NullReferenceException )
             {
                 //Bir ?ey yapma
             }

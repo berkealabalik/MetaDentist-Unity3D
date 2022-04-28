@@ -326,6 +326,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4928097925985447161, guid: e8256092fe805e448aa12c3b4c4687fd,
         type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928097925985447161, guid: e8256092fe805e448aa12c3b4c4687fd,
+        type: 3}
       propertyPath: m_Color.b
       value: 0.5849056
       objectReference: {fileID: 0}
@@ -674,7 +679,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -3.897, y: 1.696}
-  m_SizeDelta: {x: 1.2, y: 0.4}
+  m_SizeDelta: {x: 1.08, y: 0.46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &218260245
 MonoBehaviour:
@@ -688,6 +693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ad85b74c237614283bf3b70b2342f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 10
 --- !u!1 &234847433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1462,8 +1468,6 @@ MonoBehaviour:
   mesafe: 2
   kirmiziFloat: 0
   outline: {fileID: 0}
-  cube: {fileID: 0}
-  tool04: {fileID: 0}
 --- !u!1 &621010583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,7 +1598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: e6f377d46db495346972f73879f53f6b, type: 2}
   m_Color: {r: 0.4614296, g: 0.67832875, b: 0.990566, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -11217,7 +11221,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1493672420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.009}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 633119871}
@@ -11225,8 +11229,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.04}
-  m_SizeDelta: {x: 1.2, y: 0.3}
+  m_AnchoredPosition: {x: 0.123, y: -0.023}
+  m_SizeDelta: {x: 0.78, y: 0.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1493672422
 MonoBehaviour:
@@ -11248,19 +11252,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Sol tarafta bulunan men\xFCden istedi\u011Finiz hastay\u0131 \xE7a\u011F\u0131rabilirsiniz."
+  m_text: "Sol tarafta bulunan tahtadan i\u015Flem yapmak istedi\u011Finiz hastay\u0131
+    \xE7a\u011F\u0131rmak i\xE7in \"GELS\u0130N\" butonuna t\u0131klayablirsiniz. "
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: b246c4190f4e46ec9352fe15a7b09ce0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
-  m_colorMode: 3
+  m_colorMode: 1
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
     topRight: {r: 1, g: 1, b: 1, a: 1}
@@ -11275,14 +11280,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.08
-  m_fontSizeBase: 0.08
+  m_fontSize: 0.051
+  m_fontSizeBase: 0.051
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_fontStyle: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
