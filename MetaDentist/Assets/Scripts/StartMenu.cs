@@ -2,22 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class StartMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Animator animator;
+
+    public InputField userNameInput;
+    public InputField userMail;
+    public static string username;
+    public static string mail;
+
+
+    public void SaveUsername(string newName)
+    {
+         username = newName;
+
+    }
+
     public void playGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-       
-       
-    }
-  
+
+        if (userNameInput != null && userMail != null)
+        {
+            username = userNameInput.text;
+            mail = userMail.text;
+            Debug.Log("Play Game:" + username + " " + mail);
+        }
    
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+
+
     public void ExitGame()
     {
         Application.Quit();
-        Debug.Log("Game is exiting");
+        Debug.Log("exiting");
     }
 }
