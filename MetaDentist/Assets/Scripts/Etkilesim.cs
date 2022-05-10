@@ -6,6 +6,11 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class Etkilesim : MonoBehaviour
 {
+    public GameObject cube;
+    public GameObject tool04;
+    private Vector3 cubeFirstPosition;
+    private Vector3 toolFirstPosition;
+    private Vector3 hitFirstPosition;
     public Image nokta;
     public float mesafe;
     public float kirmiziFloat;
@@ -15,8 +20,8 @@ public class Etkilesim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
+        this.cubeFirstPosition = cube.transform.position;
+        this.toolFirstPosition = tool04.transform.position;
     }
 
 
@@ -31,7 +36,8 @@ public class Etkilesim : MonoBehaviour
         if (Physics.Raycast(transform.position, ileri, out hit))
         {
             Debug.DrawLine(transform.position, hit.point, Color.blue);
-         
+            hitFirstPosition = hit.collider.gameObject.transform.position;
+
             if (hit.collider.gameObject.CompareTag("HighlightedObject"))
             {
                 nokta.color = Color.red;
@@ -57,7 +63,7 @@ public class Etkilesim : MonoBehaviour
                     int scenenum = 1;
                     // SceneManager.LoadScene("Gokberk");
                     LoadScene(scenenum);
-                    Debug.Log("Button T?kland?");
+                    Debug.Log("Button Tiklandi");
 
                 }
                var colors1 = hit.collider.gameObject.GetComponent<Button> ().colors;
@@ -102,6 +108,41 @@ public class Etkilesim : MonoBehaviour
                 var colors3 = hit.collider.gameObject.GetComponent<Button> ().colors;
                 colors3.normalColor = Color.gray;
                 hit.collider.gameObject.GetComponent<Button> ().colors = colors3;
+            }
+
+            else if (hit.collider.gameObject.CompareTag("DentistTool"))
+            {
+                nokta.color = Color.red;
+                hit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 10.0f;
+                Debug.Log("hit name" + hit.collider.name);
+                if (Input.GetMouseButtonDown(0))
+                {
+                    if (hit.collider.name == "TOOL04")
+                    {
+                        Debug.Log("seçildi: " + hit.collider.gameObject.name);
+                        Debug.Log("Position bilgisi dentist tool" + hit.collider.gameObject.transform.position);
+                        Debug.Log("Position bilgisi cube" + cube.transform.position);
+
+                        cube.transform.position = toolFirstPosition;
+                        hit.collider.transform.position = cubeFirstPosition;
+
+                        // hit.collider.gameObject.transform.position = this.cubeFirstPosition;
+                        hit.collider.gameObject.transform.rotation = Quaternion.Euler(-90, 0, 0);
+                        // cube.transform.position = this.hitFirstPosition;
+                        cube.transform.rotation = Quaternion.Euler(0, 90, 0);
+                    }
+                    else if (hit.collider.name == "Cube 1")
+                    {
+                        Debug.Log("cube 1 carpti");
+
+                        hit.collider.transform.position = cubeFirstPosition;
+                        tool04.transform.position = toolFirstPosition;
+                    }
+
+                    // cube.SetActive(false);
+                }
+
+                sonHit = hit;
             }
 
             try { 
