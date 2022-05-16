@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+
 public class Etkilesim : MonoBehaviour
 {
     public GameObject cube;
@@ -42,7 +44,7 @@ public class Etkilesim : MonoBehaviour
             {
                 nokta.color = Color.red;
                 hit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 10.0f;
-                if (Input.GetMouseButtonDown(0))
+                if (Gamepad.all[0].xButton.isPressed)
                 {
                     Debug.Log("seçildi: " + hit.collider.gameObject.name);
                 }
@@ -58,7 +60,7 @@ public class Etkilesim : MonoBehaviour
                 var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
                 colors.normalColor = Color.red;
                 hit.collider.gameObject.GetComponent<Button> ().colors = colors;
-                if (Input.GetMouseButtonDown(0))
+                if (Gamepad.all[0].xButton.isPressed)
                 {
                     int scenenum = 1;
                     // SceneManager.LoadScene("Gokberk");
@@ -67,7 +69,7 @@ public class Etkilesim : MonoBehaviour
 
                 }
                var colors1 = hit.collider.gameObject.GetComponent<Button> ().colors;
-               colors1.normalColor = Color.gray;
+               colors1.normalColor = Color.white;
                hit.collider.gameObject.GetComponent<Button> ().colors = colors1;
             }
             
@@ -78,7 +80,7 @@ public class Etkilesim : MonoBehaviour
                 var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
                 colors.normalColor = Color.red;
                 hit.collider.gameObject.GetComponent<Button> ().colors = colors;
-                if (Input.GetMouseButtonDown(0))
+                if (Gamepad.all[0].xButton.isPressed)
                 {
                     int scenenum = 2;
                     // SceneManager.LoadScene("Gokberk");
@@ -87,7 +89,7 @@ public class Etkilesim : MonoBehaviour
 
                 }
                 var colors2 = hit.collider.gameObject.GetComponent<Button> ().colors;
-                colors2.normalColor = Color.gray;
+                colors2.normalColor = Color.white;
                 hit.collider.gameObject.GetComponent<Button> ().colors = colors2;
             }
 
@@ -97,7 +99,7 @@ public class Etkilesim : MonoBehaviour
                 var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
                 colors.normalColor = Color.red;
                 hit.collider.gameObject.GetComponent<Button> ().colors = colors;
-                if (Input.GetMouseButtonDown(0))
+                if (Gamepad.all[0].xButton.isPressed)
                 {
                     int scenenum = 3;
                     // SceneManager.LoadScene("Gokberk");
@@ -106,7 +108,7 @@ public class Etkilesim : MonoBehaviour
 
                 }
                 var colors3 = hit.collider.gameObject.GetComponent<Button> ().colors;
-                colors3.normalColor = Color.gray;
+                colors3.normalColor = Color.white;
                 hit.collider.gameObject.GetComponent<Button> ().colors = colors3;
             }
 
@@ -115,7 +117,7 @@ public class Etkilesim : MonoBehaviour
                 nokta.color = Color.red;
                 hit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 10.0f;
                 Debug.Log("hit name" + hit.collider.name);
-                if (Input.GetMouseButtonDown(0))
+                if (Gamepad.all[0].xButton.isPressed)
                 {
                     if (hit.collider.name == "TOOL04")
                     {

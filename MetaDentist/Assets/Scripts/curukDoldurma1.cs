@@ -31,9 +31,9 @@ public class curukDoldurma1 : MonoBehaviour
         CubeCount = 0;
         Renderer render = doldurulcakYer.GetComponent<Renderer>();
         Renderer rendercuruk = curuk.GetComponent<Renderer>();
-        float xbound = render.transform.localScale.x;
-        float ybound = render.transform.localScale.y;
-        float zbound = render.transform.localScale.z;
+        float xbound = render.transform.lossyScale.x;
+        float ybound = render.transform.lossyScale.y;
+        float zbound = render.transform.lossyScale.z;
 
 
 
@@ -60,8 +60,8 @@ public class curukDoldurma1 : MonoBehaviour
 
         //curuks.transform.position = new Vector3(0, 0, 0);
         curuks.transform.SetParent(doldurulcakYer.transform , true);
-        //curuks.transform.localPosition = doldurulcakYer.transform.localPosition;
-        curuks.transform.localPosition = new Vector3(0, 0, 0);
+        curuks.transform.localPosition = doldurulcakYer.transform.localPosition * -1;
+       //curuks.transform.localPosition = new Vector3(0, 0, 0);
     }
 
 }

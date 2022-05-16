@@ -4,18 +4,20 @@ using UnityEngine;
 public class TouchDelete : MonoBehaviour
 {
     public float DelayTime;
-    private void OnCollisionEnter2D(Collision2D collision)
+    void Update()
     {
-        
+      
     }
+
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.collider.bounds);
         if(collision.gameObject.CompareTag("Curuk"))
         {
+            
             Destroy(collision.gameObject, DelayTime);
         }
-       
-
+  
     }
 
 }
