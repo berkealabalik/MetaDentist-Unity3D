@@ -44,7 +44,7 @@ public class Etkilesim : MonoBehaviour
             {
                 nokta.color = Color.red;
                 hit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 10.0f;
-                if (Gamepad.all[0].xButton.isPressed)
+                if (Gamepad.all[0].crossButton.isPressed)
                 {
                     Debug.Log("seçildi: " + hit.collider.gameObject.name);
                 }
@@ -60,7 +60,7 @@ public class Etkilesim : MonoBehaviour
                 var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
                 colors.normalColor = Color.red;
                 hit.collider.gameObject.GetComponent<Button> ().colors = colors;
-                if (Gamepad.all[0].xButton.isPressed)
+                if (Gamepad.all[0].crossButton.isPressed)
                 {
                     int scenenum = 1;
                     // SceneManager.LoadScene("Gokberk");
@@ -80,7 +80,7 @@ public class Etkilesim : MonoBehaviour
                 var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
                 colors.normalColor = Color.red;
                 hit.collider.gameObject.GetComponent<Button> ().colors = colors;
-                if (Gamepad.all[0].xButton.isPressed)
+                if (Gamepad.all[0].crossButton.isPressed)
                 {
                     int scenenum = 2;
                     // SceneManager.LoadScene("Gokberk");
@@ -99,7 +99,7 @@ public class Etkilesim : MonoBehaviour
                 var colors = hit.collider.gameObject.GetComponent<Button> ().colors;
                 colors.normalColor = Color.red;
                 hit.collider.gameObject.GetComponent<Button> ().colors = colors;
-                if (Gamepad.all[0].xButton.isPressed)
+                if (Gamepad.all[0].crossButton.isPressed)
                 {
                     int scenenum = 3;
                     // SceneManager.LoadScene("Gokberk");
@@ -117,7 +117,7 @@ public class Etkilesim : MonoBehaviour
                 nokta.color = Color.red;
                 hit.collider.gameObject.GetComponent<Outline>().OutlineWidth = 10.0f;
                 Debug.Log("hit name" + hit.collider.name);
-                if (Gamepad.all[0].xButton.isPressed)
+                if (Gamepad.all[0].crossButton.isPressed)
                 {
                     if (hit.collider.name == "TOOL04")
                     {

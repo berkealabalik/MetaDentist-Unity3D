@@ -7,9 +7,10 @@ public class ChangeCollider : MonoBehaviour
   
     private BoxCollider AeratörCollider;
     private bool pressed = false;
-
-    public GUIStyle aeiratörStilibüyük;
-    public GUIStyle aeiratörStiliküçük;
+    public GameObject AeratorHead;
+    public GameObject buyukucImage;
+    public GameObject kucukucImage;
+   
     private float timer = 0;
     private float duration = 0.15f;
     // Start is called before the first frame update
@@ -23,11 +24,10 @@ public class ChangeCollider : MonoBehaviour
     void Start()
     {
         heads = new Dictionary<HeadState, HeadMethod>();
-        heads[HeadState.Big] = Bighead;
-        heads[HeadState.small] = smallHead;
+        //heads[HeadState.Big] = Bighead;
+        //heads[HeadState.small] = smallHead;
         state = HeadState.small;
-
-        AeratörCollider = GetComponent<BoxCollider>();
+        AeratörCollider = AeratorHead.GetComponent<BoxCollider>();
 
 
     }
@@ -43,16 +43,20 @@ public class ChangeCollider : MonoBehaviour
                 timer = 0;
                 if (pressed == false)
                 {
-                    AeratörCollider.size = new Vector3(AeratörCollider.size.x, AeratörCollider.size.y * 2, AeratörCollider.size.z * 2);
+                    AeratörCollider.size = new Vector3(AeratörCollider.size.x, AeratörCollider.size.y, AeratörCollider.size.z * 2);
                     pressed = true;
+                    kucukucImage.SetActive(false);
+                    buyukucImage.SetActive(true);
                     state = HeadState.Big;
                    
                 }
                 else
                 {
-                    AeratörCollider.size = new Vector3(AeratörCollider.size.x, AeratörCollider.size.y / 2, AeratörCollider.size.z / 2);
+                    AeratörCollider.size = new Vector3(AeratörCollider.size.x, AeratörCollider.size.y, AeratörCollider.size.z / 2);
                     pressed = false;
                     state = HeadState.small;
+                    kucukucImage.SetActive(true);
+                    buyukucImage.SetActive(false);
                 }
             }
             
@@ -60,7 +64,7 @@ public class ChangeCollider : MonoBehaviour
         }
     }
 
-
+    /*
     void OnGUI()
     {
         heads[state]();
@@ -78,7 +82,7 @@ public class ChangeCollider : MonoBehaviour
     }
 
 
-
+    */
 }
 
 
