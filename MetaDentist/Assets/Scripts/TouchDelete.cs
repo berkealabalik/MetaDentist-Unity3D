@@ -3,22 +3,28 @@ using UnityEngine;
 
 public class TouchDelete : MonoBehaviour
 {
+    public int DeletedDecayNumber;
+    public static int MineEntered=0;
     public float DelayTime;
     void Update()
     {
       
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void Awake()
     {
-        Debug.Log(collision.collider.bounds);
-        if(collision.gameObject.CompareTag("Curuk"))
-        {
-            
-            Destroy(collision.gameObject, DelayTime);
-        }
-  
+        DeletedDecayNumber = 0;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Curuk"))
+        {
+            DeletedDecayNumber = DeletedDecayNumber + 1;
+            Debug.Log("IPEK " + DeletedDecayNumber);
+            Destroy(collision.gameObject, DelayTime);
+        }
+        
+    }
 }
 

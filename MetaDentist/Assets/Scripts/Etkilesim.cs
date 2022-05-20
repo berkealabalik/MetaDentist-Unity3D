@@ -33,7 +33,7 @@ public class Etkilesim : MonoBehaviour
         RaycastHit hit;
         Vector3 ileri = transform.TransformDirection(Vector3.forward);
 
-        nokta.color = Color.white;
+        //nokta.color = Color.white;
 
         if (Physics.Raycast(transform.position, ileri, out hit))
         {

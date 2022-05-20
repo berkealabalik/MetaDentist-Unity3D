@@ -13,10 +13,8 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-        if (Gamepad.all[0].startButton.isPressed)
+        if (Gamepad.all[0].triangleButton.isPressed || Input.GetKeyDown(KeyCode.Escape))
         {
-
             if (GameIsPaused)
             {
                 Resume();
@@ -48,6 +46,11 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("SampleScene");
+    }
+    public void LoadResultsScene()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("ResultsScene");
     }
     public void QuitGame()
     {

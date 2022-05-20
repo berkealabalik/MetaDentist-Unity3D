@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/hands.unity
     guid: 6664bc12cc862df45bca91662480fb89
+  - enabled: 1
+    path: Assets/Scenes/ResultsScene.unity
+    guid: d6dc26943198a3d449d4f699d5da0295
   m_configObjects:
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 3946785612b26104690b5a1c12aa4007,
       type: 2}

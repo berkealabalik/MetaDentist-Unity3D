@@ -29,6 +29,6 @@ public class Result : MonoBehaviour
         //leftCubeNum = curukDoldurma1.CubeCount;
 
         //Debug.Log("Total cube :" + TotalCubeNum);
-        print(TotalCubeNum);
+        
     }
 }

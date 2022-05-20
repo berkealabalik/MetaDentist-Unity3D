@@ -64,25 +64,7 @@ public class ChangeCollider : MonoBehaviour
         }
     }
 
-    /*
-    void OnGUI()
-    {
-        heads[state]();
-    }
-
-    public void smallHead()
-    {
-             GUI.Label(new Rect(0, 0, Screen.width, 50), "0.5MM", aeiratörStiliküçük);
-        // main menu gui goes here
-    }
-
-    public void Bighead()
-    {
-        GUI.Label(new Rect(0, 0, Screen.width, 50), "0.5MM", aeiratörStilibüyük);
-    }
-
-
-    */
+  
 }
 
 
