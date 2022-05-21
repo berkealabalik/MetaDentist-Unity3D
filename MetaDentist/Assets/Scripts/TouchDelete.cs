@@ -3,19 +3,15 @@ using UnityEngine;
 
 public class TouchDelete : MonoBehaviour
 {
-    public int DeletedDecayNumber;
-    public static int MineEntered=0;
+    public static int DeletedDecayNumber;
+    public static int MineEntered;
     public float DelayTime;
+ 
     void Update()
     {
-      
+       
     }
-
-    private void Awake()
-    {
-        DeletedDecayNumber = 0;
-    }
-
+  
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Curuk"))
@@ -24,6 +20,11 @@ public class TouchDelete : MonoBehaviour
             Debug.Log("IPEK " + DeletedDecayNumber);
             Destroy(collision.gameObject, DelayTime);
         }
+        else if (collision.gameObject.CompareTag("mine"))
+        {
+            MineEntered += 1;
+            Debug.Log("Ipek Mineye Girdi kafa göz " + MineEntered);
+        } 
         
     }
 }

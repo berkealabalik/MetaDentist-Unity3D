@@ -10,6 +10,7 @@ TagManager:
   - Button1
   - Button2
   - DentistTool
+  - mine
   layers:
   - Default
   - TransparentFX

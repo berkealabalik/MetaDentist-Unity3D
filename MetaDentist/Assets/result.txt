@@ -1,2 +1,18 @@
-10
-20
+Tarih : 22.05.2022 00:23:18
+
+Isim : 
+
+Başarı Yüzdesi : %0
+
+Mineye Girme Sayisi : 0
+
+Toplam Çürük Sayısı : 300 
+
+Temizlenen Çürük Sayısı : 0
+
+Kalan Çürük Sayısı : 300
+
+Freze Ucu Değişimi Sayisi : 3
+
+Toplam Geçirilen Süre : 7,239423(Saniye)
+

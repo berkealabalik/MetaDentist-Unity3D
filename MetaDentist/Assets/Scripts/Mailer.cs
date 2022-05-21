@@ -14,7 +14,6 @@ public class Mailer : MonoBehaviour
         string path = "Assets/result.txt";
         //Read the text from directly from the test.txt file
         StreamReader reader = new StreamReader(path);
-        Debug.Log("BERKE");
 
         string file = reader.ReadToEnd();
         Debug.Log("file" + file);
@@ -35,9 +34,9 @@ public class Mailer : MonoBehaviour
         MailAddress to = new MailAddress("medsimproject@gmail.com");
         // Specify the message content.
         MailMessage message = new MailMessage(from, to);
-        message.Body = ".....  " + file; //TODO: Kullanýcý VERÝLERÝ  + reader.ToString()
+        message.Body = file; //TODO: Kullanýcý VERÝLERÝ  + reader.ToString()
         message.BodyEncoding = System.Text.Encoding.UTF8;
-        message.Subject = "..... Kullanýcý Sonuçlarý";
+        message.Subject = StartMenu.username +" Kullanýcý Sonuçlarý";
         message.SubjectEncoding = System.Text.Encoding.UTF8;
         // Set the method that is called back when the send operation ends.
         client.SendCompleted += new SendCompletedEventHandler(SendCompletedCallback);

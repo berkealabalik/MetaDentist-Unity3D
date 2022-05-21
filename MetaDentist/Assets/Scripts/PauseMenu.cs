@@ -9,21 +9,27 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
-
+    private float timer = 0;
+    private float duration = 0.10f;
     // Update is called once per frame
     void Update()
     {
-        if (Gamepad.all[0].triangleButton.isPressed || Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (GameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
 
+        if (Gamepad.all[0].startButton.isPressed|| Input.GetKeyDown(KeyCode.Escape))
+        {
+            timer += Time.deltaTime;
+            if (timer >= duration)
+            {
+                timer = 0;
+                if (GameIsPaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
+            }
         }
     }
 
@@ -41,11 +47,14 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+
+        Cursor.lockState = CursorLockMode.Locked;
+
     }
     public void LoadMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void LoadResultsScene()
     {

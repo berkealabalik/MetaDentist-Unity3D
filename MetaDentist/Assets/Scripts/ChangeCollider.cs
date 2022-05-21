@@ -10,7 +10,7 @@ public class ChangeCollider : MonoBehaviour
     public GameObject AeratorHead;
     public GameObject buyukucImage;
     public GameObject kucukucImage;
-   
+    public static int howManyTimesChange;
     private float timer = 0;
     private float duration = 0.15f;
     // Start is called before the first frame update
@@ -48,7 +48,7 @@ public class ChangeCollider : MonoBehaviour
                     kucukucImage.SetActive(false);
                     buyukucImage.SetActive(true);
                     state = HeadState.Big;
-                   
+                    howManyTimesChange += 1;
                 }
                 else
                 {
