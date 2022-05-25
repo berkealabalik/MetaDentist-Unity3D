@@ -402,7 +402,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   userNameInput: {fileID: 764677156}
-  userMail: {fileID: 0}
 --- !u!1 &382929656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,7 +1007,7 @@ PrefabInstance:
     - target: {fileID: 8238496154337776502, guid: 96d43dbe3f414cc458b0d20a27f4fd05,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 320.3
+      value: 263
       objectReference: {fileID: 0}
     - target: {fileID: 8238496154337776502, guid: 96d43dbe3f414cc458b0d20a27f4fd05,
         type: 3}
@@ -1554,12 +1553,12 @@ PrefabInstance:
     - target: {fileID: 4517031492754575728, guid: 3b9e0f055c54fcc449a04fd488722d35,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 270.5
+      value: 127
       objectReference: {fileID: 0}
     - target: {fileID: 4517031492754575728, guid: 3b9e0f055c54fcc449a04fd488722d35,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 185.8
+      value: 185.83
       objectReference: {fileID: 0}
     - target: {fileID: 4517031492754575728, guid: 3b9e0f055c54fcc449a04fd488722d35,
         type: 3}

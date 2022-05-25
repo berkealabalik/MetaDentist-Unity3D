@@ -82,10 +82,10 @@ public class Etkilesim : MonoBehaviour
                 hit.collider.gameObject.GetComponent<Button> ().colors = colors;
                 if (Gamepad.all[0].crossButton.isPressed)
                 {
-                    int scenenum = 2;
+                    int scenenum = 4;
                     // SceneManager.LoadScene("Gokberk");
                     LoadScene(scenenum);
-                    Debug.Log("Button T?kland?");
+                   
 
                 }
                 var colors2 = hit.collider.gameObject.GetComponent<Button> ().colors;
@@ -101,10 +101,10 @@ public class Etkilesim : MonoBehaviour
                 hit.collider.gameObject.GetComponent<Button> ().colors = colors;
                 if (Gamepad.all[0].crossButton.isPressed)
                 {
-                    int scenenum = 3;
+                    int scenenum = 1;
                     // SceneManager.LoadScene("Gokberk");
                     LoadScene(scenenum);
-                    Debug.Log("Button T?kland?");
+                   
 
                 }
                 var colors3 = hit.collider.gameObject.GetComponent<Button> ().colors;
