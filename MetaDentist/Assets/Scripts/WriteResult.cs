@@ -10,7 +10,7 @@ public class WriteResult : MonoBehaviour
 {
 
     string myFilePath, fileName;
-    List<string> resultsArr = new List<string>();
+    public static List<string> resultsArr = new List<string>();
     
     private void StartWrite()
     {
@@ -25,11 +25,11 @@ public class WriteResult : MonoBehaviour
         resultsArr.Add("Toplam Geçirilen Süre : " + Time.timeSinceLevelLoad.ToString() + "(Saniye)" + "\n");
         fileName = "result.txt";
         myFilePath = Application.dataPath + "/" + fileName;
+        Mailer.mailer(resultsArr);
     }
     public void createNewResultFile()
     {
         StartWrite();
-        File.WriteAllLines(myFilePath, resultsArr);
     }
 
 }

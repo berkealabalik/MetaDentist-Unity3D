@@ -43,12 +43,12 @@ public class GamepadHandControl : MonoBehaviour
             {
                 Charachter.transform.position += Vector3.back * Time.deltaTime * speed;
             }
-            if (Gamepad.all[0].leftStick.down.isPressed)
+            if (Gamepad.all[0].rightTrigger.isPressed)
             {
                 Charachter.transform.position += Vector3.down * Time.deltaTime * speed;
             }
 
-            if (Gamepad.all[0].leftStick.up.isPressed)
+            if (Gamepad.all[0].rightShoulder.isPressed)
             {
                 Charachter.transform.position += Vector3.up * Time.deltaTime * speed;
             }
@@ -56,7 +56,7 @@ public class GamepadHandControl : MonoBehaviour
 
             if (Gamepad.all[0].leftStick.left.isPressed)
             {
-                //Charachter.transform.rotation = Quaternion.identity(0, speed, 0, 0);
+                //Charachter.transform.rotation = 
             }
 
 

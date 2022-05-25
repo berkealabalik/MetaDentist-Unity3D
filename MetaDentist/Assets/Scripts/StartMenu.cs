@@ -8,7 +8,7 @@ public class StartMenu : MonoBehaviour
     // Start is called before the first frame update
 
     public InputField userNameInput;
-    public InputField userMail;
+
     public static string username;
     public static string mail;
 
@@ -22,10 +22,10 @@ public class StartMenu : MonoBehaviour
     public void playGame()
     {
 
-        if (userNameInput != null && userMail != null)
+        if (userNameInput != null)
         {
             username = userNameInput.text;
-            mail = userMail.text;
+          
             Debug.Log("Play Game:" + username + " " + mail);
         }
    

@@ -36,7 +36,7 @@ public class ChangeCollider : MonoBehaviour
     void Update()
     {
         if(Gamepad.all[0].triangleButton.isPressed) {
-
+          
             timer += Time.deltaTime;
             if (timer >= duration)
             {

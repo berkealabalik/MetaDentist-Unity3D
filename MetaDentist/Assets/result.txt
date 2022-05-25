@@ -1,4 +1,4 @@
-Tarih : 22.05.2022 00:23:18
+Tarih : 22.05.2022 14:26:55
 
 Isim : 
 
@@ -12,7 +12,7 @@ Temizlenen Çürük Sayısı : 0
 
 Kalan Çürük Sayısı : 300
 
-Freze Ucu Değişimi Sayisi : 3
+Freze Ucu Değişimi Sayisi : 0
 
-Toplam Geçirilen Süre : 7,239423(Saniye)
+Toplam Geçirilen Süre : 2,324695(Saniye)
 

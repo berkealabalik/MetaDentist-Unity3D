@@ -6,7 +6,7 @@ public class TouchDelete : MonoBehaviour
     public static int DeletedDecayNumber;
     public static int MineEntered;
     public float DelayTime;
- 
+    
     void Update()
     {
        
@@ -16,6 +16,7 @@ public class TouchDelete : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Curuk"))
         {
+          
             DeletedDecayNumber = DeletedDecayNumber + 1;
             Debug.Log("IPEK " + DeletedDecayNumber);
             Destroy(collision.gameObject, DelayTime);
