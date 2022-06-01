@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SimleCharMove : MonoBehaviour
 {
-    [SerializeField] private float speed = 5.0f;
+    [SerializeField] private float speed = 0.5f;
 
     private void Update()
     {

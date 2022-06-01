@@ -539,7 +539,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -177.3, y: 171.5}
+  m_AnchoredPosition: {x: -177.3, y: 149.6}
   m_SizeDelta: {x: 216.2, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &449256875
@@ -776,14 +776,14 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.12
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -819,7 +819,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 2.33
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -1435,7 +1435,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -66.8, y: -592.8}
+  m_AnchoredPosition: {x: -66.8, y: -618.9}
   m_SizeDelta: {x: 493.6, y: 1500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2089908511
@@ -1575,7 +1575,7 @@ PrefabInstance:
     - target: {fileID: 4517031492754575728, guid: 3b9e0f055c54fcc449a04fd488722d35,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 160.2
+      value: 145.22
       objectReference: {fileID: 0}
     - target: {fileID: 4517031492754575728, guid: 3b9e0f055c54fcc449a04fd488722d35,
         type: 3}

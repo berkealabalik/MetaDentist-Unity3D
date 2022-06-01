@@ -11,6 +11,7 @@ TagManager:
   - Button2
   - DentistTool
   - mine
+  - tahta
   layers:
   - Default
   - TransparentFX
