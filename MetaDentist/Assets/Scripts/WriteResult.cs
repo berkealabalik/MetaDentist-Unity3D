@@ -14,6 +14,7 @@ public class WriteResult : MonoBehaviour
     
     private void StartWrite()
     {
+        resultsArr.Clear();
         resultsArr.Add("Tarih : " + System.DateTime.Now + "\n");
         resultsArr.Add("Isim : " +  StartMenu.username + "\n");
         resultsArr.Add("Baþarý Yüzdesi : %" + ((100 * TouchDelete.DeletedDecayNumber) / 300 ).ToString() + "\n");

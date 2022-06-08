@@ -16,6 +16,10 @@ public class ResultButton : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    public void loadGameScene()
+    {
+        SceneManager.LoadScene(1);
+    }
 
- 
+
 }

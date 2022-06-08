@@ -29,7 +29,7 @@ public class StartMenu : MonoBehaviour
             Debug.Log("Play Game:" + username + " " + mail);
         }
    
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
     }
 
 
